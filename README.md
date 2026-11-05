@@ -8,7 +8,7 @@ Every payment lands at a fresh address only its receiver can find.<br/>
 A sealed note says who paid and why. Spending never needs gas.
 
 [![MIT](https://img.shields.io/badge/license-MIT-0b1a1d)](LICENSE)
-[![tests](https://img.shields.io/badge/tests-64%20passing-2e7268)](test)
+[![CI](https://github.com/shaibuafeez/stealthkit/actions/workflows/ci.yml/badge.svg)](https://github.com/shaibuafeez/stealthkit/actions/workflows/ci.yml)
 [![chains](https://img.shields.io/badge/chains-EVM%20·%20Solana%20·%20Sui%20·%20Aptos%20·%20Stellar-d46558)](#chains)
 [![ERC-5564](https://img.shields.io/badge/ERC--5564-compatible-0b1a1d)](https://eips.ethereum.org/EIPS/eip-5564)
 
