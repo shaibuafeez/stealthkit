@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Private payments on any chain: one-time stealth addresses, sealed notes, view keys and gasless spending. ERC-5564 on EVM, an ed25519 scheme for Solana, Sui, Aptos and Stellar. Extracted from Kova.",
   "license": "MIT",
+  "author": "Kova (https://mykova.app)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaibuafeez/stealthkit.git"
+  },
+  "homepage": "https://github.com/shaibuafeez/stealthkit#readme",
+  "bugs": {
+    "url": "https://github.com/shaibuafeez/stealthkit/issues"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -60,7 +69,8 @@
     "example:send": "pnpm build && node examples/02-send.mjs",
     "example:scan": "pnpm build && node examples/03-scan.mjs",
     "example:spend": "pnpm build && node examples/04-spend.mjs",
-    "vectors": "pnpm build && node scripts/vectors.mjs"
+    "vectors": "pnpm build && node scripts/vectors.mjs",
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
   },
   "engines": {
     "node": ">=22"
