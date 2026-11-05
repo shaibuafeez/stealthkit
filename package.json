@@ -1,0 +1,51 @@
+{
+  "name": "monad-stealth",
+  "version": "0.1.0",
+  "description": "Private payments on Monad: ERC-5564 stealth addresses, sealed memos, view keys and gasless spending with EIP-3009. Extracted from Kova.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "monad",
+    "erc-5564",
+    "erc-6538",
+    "stealth-address",
+    "privacy",
+    "eip-3009",
+    "payments",
+    "ausd",
+    "usdc"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "example:receive": "pnpm build && node examples/01-receive.mjs",
+    "example:send": "pnpm build && node examples/02-send.mjs",
+    "example:scan": "pnpm build && node examples/03-scan.mjs",
+    "example:spend": "pnpm build && node examples/04-spend.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@noble/ciphers": "^1.3.0",
+    "@noble/curves": "1.9.1",
+    "viem": "2.56.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "6.0.3",
+    "vitest": "5.0.1"
+  }
+}
