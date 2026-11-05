@@ -9,7 +9,7 @@ import {
   stealthKeysMessage,
   stealthMetaAddress,
   stealthViewKey,
-} from 'monad-stealth'
+} from 'stealthkit/evm'
 
 const wallet = privateKeyToAccount(process.env.PRIVATE_KEY ?? generatePrivateKey())
 // Any EVM wallet signs this the same way every time, so the keys need no storage.

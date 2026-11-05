@@ -8,7 +8,7 @@ import {
   stealthKeysFromSignature,
   stealthMetaAddress,
   stealthPrivateKey,
-} from 'monad-stealth'
+} from 'stealthkit/evm'
 
 const keys = stealthKeysFromSignature(await privateKeyToAccount(generatePrivateKey()).signMessage({ message: 'demo' }))
 const payment = generateStealthPayment(stealthMetaAddress(keys)) // as a sender would have made it

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { type PrivateHolding, planPrivateSpend, routePayment } from '../src/router.js'
+import { type PrivateHolding, planPrivateSpend, routePayment } from '../src/core/router.js'
 
 const $ = (dollars: number) => BigInt(Math.round(dollars * 1e6))
 const at = (...amounts: number[]): PrivateHolding<string>[] =>

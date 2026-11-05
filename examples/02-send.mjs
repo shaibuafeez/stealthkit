@@ -8,7 +8,7 @@ import {
   monad,
   stealthKeysFromSignature,
   stealthMetaAddress,
-} from 'monad-stealth'
+} from 'stealthkit/evm'
 
 // Without META, pay a throwaway receiver so the example runs on its own.
 const meta =

@@ -17,7 +17,7 @@ import {
   transferAuthorizationTypedData,
   checkStealthAddress,
   viewKeyOf,
-} from '../src/index.js'
+} from '../src/chains/evm/index.js'
 
 describe('the whole round: send, announce, find, open, spend without gas', () => {
   it('works end to end, with the one-time address signing its own transfer', async () => {

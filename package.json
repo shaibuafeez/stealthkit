@@ -1,30 +1,56 @@
 {
-  "name": "monad-stealth",
-  "version": "0.1.0",
-  "description": "Private payments on Monad: ERC-5564 stealth addresses, sealed memos, view keys and gasless spending with EIP-3009. Extracted from Kova.",
+  "name": "stealthkit",
+  "version": "1.0.0",
+  "description": "Private payments on any chain: one-time stealth addresses, sealed notes, view keys and gasless spending. ERC-5564 on EVM, an ed25519 scheme for Solana, Sui, Aptos and Stellar. Extracted from Kova.",
   "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./evm": {
+      "types": "./dist/chains/evm/index.d.ts",
+      "default": "./dist/chains/evm/index.js"
+    },
+    "./solana": {
+      "types": "./dist/chains/solana/index.d.ts",
+      "default": "./dist/chains/solana/index.js"
+    },
+    "./sui": {
+      "types": "./dist/chains/sui/index.d.ts",
+      "default": "./dist/chains/sui/index.js"
+    },
+    "./aptos": {
+      "types": "./dist/chains/aptos/index.d.ts",
+      "default": "./dist/chains/aptos/index.js"
+    },
+    "./stellar": {
+      "types": "./dist/chains/stellar/index.d.ts",
+      "default": "./dist/chains/stellar/index.js"
     }
   },
   "files": [
     "dist",
     "README.md",
+    "DESIGN.md",
     "LICENSE"
   ],
   "keywords": [
-    "monad",
-    "erc-5564",
-    "erc-6538",
     "stealth-address",
     "privacy",
+    "erc-5564",
+    "erc-6538",
     "eip-3009",
+    "ed25519",
+    "secp256k1",
+    "solana",
+    "sui",
+    "aptos",
+    "monad",
+    "evm",
     "payments",
-    "ausd",
-    "usdc"
+    "stellar"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
@@ -33,7 +59,8 @@
     "example:receive": "pnpm build && node examples/01-receive.mjs",
     "example:send": "pnpm build && node examples/02-send.mjs",
     "example:scan": "pnpm build && node examples/03-scan.mjs",
-    "example:spend": "pnpm build && node examples/04-spend.mjs"
+    "example:spend": "pnpm build && node examples/04-spend.mjs",
+    "vectors": "pnpm build && node scripts/vectors.mjs"
   },
   "engines": {
     "node": ">=22"
@@ -41,6 +68,8 @@
   "dependencies": {
     "@noble/ciphers": "^1.3.0",
     "@noble/curves": "1.9.1",
+    "@noble/hashes": "1.8.0",
+    "@scure/base": "1.2.6",
     "viem": "2.56.8"
   },
   "devDependencies": {
